@@ -1,30 +1,46 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-</head>
-<body>
-    <form action="/create" method="POST">
-        <label for="cat">Category Name:</label>
-        <input type="text" id="cat" name="cat" required>
-    
-        <label for="catDesc">Category Description:</label>
-        <input type="text" id="catDesc" name="catDesc" required>
-    
-        <label for="div">Division Name:</label>
-        <input type="text" id="div" name="div" required>
-    
-        <label for="subcat">Sub-Category Name:</label>
-        <input type="text" id="subcat" name="subcat" required>
-    
-        <label for="subcatDesc">Sub-Category Description:</label>
-        <input type="text" id="subcatDesc" name="subcatDesc" required>
-    
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" required>
-        <button type="submit">Submit</button>
-    </form>
-    
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Add new Inventory</h1>
+    <div>
+        <form action="/create" method="POST">
+            <div>
+            <label for="cat">Category Name:</label>
+            <input type="text" id="cat" name="cat" required>
+            </div>
+        
+            <div>
+            <label for="catDesc">Category Description:</label>
+            <input type="text" id="catDesc" name="catDesc" required>
+        </div>
+
+            <div>
+            <label for="div">Division Name:</label>
+            <input type="text" id="div" name="div" required>
+        </div>
+        
+        <div>
+            <label for="subcat">Sub-Category Name:</label>
+            <input type="text" id="subcat" name="subcat" required>
+        </div>
+        
+        <div>
+            <label for="subcatDesc">Sub-Category Description:</label>
+            <input type="text" id="subcatDesc" name="subcatDesc" required>
+        </div>
+
+        <div>
+            <label for="quantity">Quantity :</label>
+            <input type="number" id="quantity" name="quantity" required>
+        </div>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+  </body>
 </html>

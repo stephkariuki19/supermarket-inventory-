@@ -7,5 +7,32 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <ul>
+      <% items.forEach(function(item) { %>
+        <li><%= item.categoryName %></li>
+      <% }); %>
+    </ul>
+
+    <h2>Categories:</h2>
+    <% items.forEach(function(item) { %>
+      <div>
+        <h3><%= item.categoryName %></h3>
+        <p><%= item.categoryDescription %></p>
+
+        <h4>Divisions:</h4>
+        <% item.divisions.forEach(function(division) { %>
+          <div>
+            <h5><%= division.divisionName %></h5>
+            <p>Available Domains:</p>
+            <% division.subCategories.forEach(function(subCategory) { %>
+              <div>
+                <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
+              </div>
+            <% }); %>
+          </div>
+        <% }); %>
+      </div>
+    <% }); %>
   </body>
 </html>

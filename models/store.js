@@ -19,6 +19,6 @@ const itemSchema = new mongoose.Schema({
   ],
 });
 
-const Cereal = mongoose.model('Cereal', itemSchema);
+const Storeitems = mongoose.model('Storeitems', itemSchema);
 
-module.exports = Cereal;
+module.exports = Storeitems;

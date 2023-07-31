@@ -1,9 +1,9 @@
-const CerealItem = require('../models/cereals');
+const SuperItem = require('../models/store');
 
-const cereal_create_post = (req, res) => {
+const super_create_post = (req, res) => {
   const { cat, catDesc, div, subcat, subcatDesc, quantity } = req.body;
 
-  const cerealItem = new CerealItem({
+  const superItem = new SuperItem({
     categoryName: cat,
     categoryDescription: catDesc,
     divisions: [
@@ -20,11 +20,11 @@ const cereal_create_post = (req, res) => {
     ],
   });
 
-  cerealItem.save()
+  superItem.save()
     .then(result => {
       // Redirect to a success page or display a success message
       console.log('Post was successful');
-      res.redirect('/success');
+      res.redirect('/');
     })
     .catch(err => {
       console.log(err);
@@ -34,5 +34,5 @@ const cereal_create_post = (req, res) => {
 };
 
 module.exports ={
-  cereal_create_post
+  super_create_post
 }
