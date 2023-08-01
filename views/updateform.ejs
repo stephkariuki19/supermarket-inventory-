@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Subcategory</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Update Subcategory</h1>
+    <div>
+      <form action="/<%= subCategory.id %>?_method=PUT" method="POST">
+        <!-- Add input fields with current subcategory data for updating -->
+        <div>
+          <label for="subcat">Sub-Category Name:</label>
+          <input type="text" id="subcat" name="subcat" value="<%= subCategory.subCategoryName %>" required>
+        </div>
+
+        <div>
+          <label for="subcatDesc">Sub-Category Description:</label>
+          <input type="text" id="subcatDesc" name="subcatDesc" value="<%= subCategory.subCategoryDescription %>" required>
+        </div>
+
+        <div>
+          <label for="quantity">Quantity :</label>
+          <input type="number" id="quantity" name="quantity" value="<%= subCategory.quantity %>" required>
+        </div>
+        <button type="submit">Update Subcategory</button>
+      </form>
+    </div>
+    <a href="/cereal">
+      <button>Return to Cereal Page</button>
+    </a>
+  </body>
+</html>

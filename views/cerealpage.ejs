@@ -36,13 +36,29 @@
         <h4>Divisions:</h4>
         <% if (item.divisions && item.divisions.length) { %>
           <% item.divisions.forEach(function(division) { %>
-            <div>
-              <h5><%= division.divisionName %></h5>
-              <p>Available Domains:</p>
+            <div class="division">
+              <div >
+                <h5><%= division.divisionName %></h5>
+                    <!-- Form for delete division request -->
+                <form action="/delete/<%= division.id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete</button>
+                </form>
+                <p>Available Domains:</p>
+              </div>
+          
               <% if (division.subCategories && division.subCategories.length) { %>
                 <% division.subCategories.forEach(function(subCategory) { %>
-                  <div>
+                  <div class="brand">
                     <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
+                    <!-- Form for delete subcategory request -->
+                      <form action="/delete/<%= subCategory.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                      </form>
+
+                        <!-- Link to the update form for the subcategory -->
+                      <a href="/update/<%= subCategory.id %>">
+                        <button>Update</button>
+                      </a>
                   </div>
                 <% }); %>
               <% } else { %>

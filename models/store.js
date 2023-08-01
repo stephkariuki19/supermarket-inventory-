@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const itemSchema = new mongoose.Schema({
-  categoryName: { type: String, required: true },
+  categoryName: { type: String, 
+    enum: ["cereal", "bakery", "produce","fruits","dairy"],
+    lowercase: true,
+    required: true },
   categoryDescription: { type: String },
   divisions: [
     {
