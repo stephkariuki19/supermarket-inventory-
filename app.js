@@ -9,7 +9,13 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const cerealRouter = require('./routes/create');
+const createRouter = require('./routes/create');
+const cerealRouter = require('./routes/cereal');
+const dairyRouter = require('./routes/dairy');
+const bakeryRouter = require('./routes/bakery');
+const produceRouter = require('./routes/produce');
+const fruitsRouter = require('./routes/fruits');
+
 
 const app = express();
 
@@ -34,8 +40,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/create', cerealRouter);
+app.use('/create', createRouter);
 app.use('/users', usersRouter);
+app.use('/cereal', cerealRouter);
+app.use('/dairy', dairyRouter);
+app.use('/fruits', fruitsRouter);
+app.use('/bakery', bakeryRouter);
+app.use('/produce', produceRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

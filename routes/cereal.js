@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const Storeitems =  require('../models/store');
 
 
@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
     const items = await Storeitems.find({}, 'categoryName categoryDescription quantity subCategoryName divisionName divisions');
 
     // Pass the data to the EJS template
-    res.render('index', { title: 'Express Supermart', items: items });
+    res.render('cerealpage', { title: 'Cereals', items: items });
   } catch (err) {
     next(err);
   }
