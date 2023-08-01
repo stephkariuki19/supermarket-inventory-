@@ -21,17 +21,25 @@
         <p><%= item.categoryDescription %></p>
 
         <h4>Divisions:</h4>
-        <% item.divisions.forEach(function(division) { %>
-          <div>
-            <h5><%= division.divisionName %></h5>
-            <p>Available Domains:</p>
-            <% division.subCategories.forEach(function(subCategory) { %>
-              <div>
-                <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
-              </div>
-            <% }); %>
-          </div>
-        <% }); %>
+        <% if (item.divisions && item.divisions.length) { %>
+          <% item.divisions.forEach(function(division) { %>
+            <div>
+              <h5><%= division.divisionName %></h5>
+              <p>Available Domains:</p>
+              <% if (division.subCategories && division.subCategories.length) { %>
+                <% division.subCategories.forEach(function(subCategory) { %>
+                  <div>
+                    <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
+                  </div>
+                <% }); %>
+              <% } else { %>
+                <p>No sub-categories available for this division.</p>
+              <% } %>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <p>No divisions available for this category.</p>
+        <% } %>
       </div>
     <% }); %>
   </body>
