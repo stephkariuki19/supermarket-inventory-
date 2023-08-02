@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Update Subcategory</title>
+    <title>Update </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Update Subcategory</h1>
+    <h1>Update Stock</h1>
     <div>
-      <form action="/<%= subCategory.id %>?_method=PUT" method="POST">
+      <form action="/cereal/<%= subCategory.id %>?_method=PUT" method="POST">
         <!-- Add input fields with current subcategory data for updating -->
         <div>
           <label for="subcat">Sub-Category Name:</label>
@@ -23,7 +23,7 @@
           <label for="quantity">Quantity :</label>
           <input type="number" id="quantity" name="quantity" value="<%= subCategory.quantity %>" required>
         </div>
-        <button type="submit">Update Subcategory</button>
+        <button type="submit">Update </button>
       </form>
     </div>
     <a href="/cereal">

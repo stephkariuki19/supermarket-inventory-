@@ -40,7 +40,7 @@ router.delete('/:id', async (req, res) => {
 
     console.log('delete made');
 
-    res.redirect('/'); //  maybe redirect elsewhere or  just have overlay
+   res.redirect('/cereal'); //maybe redirect elsewhere or  just have overlay
   } catch (err) {
     console.log(err);
     // Handle errors and display an error page or message
