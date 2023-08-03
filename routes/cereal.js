@@ -21,7 +21,7 @@ router.get('/', async function(req, res, next) {
 });
 
 // Route for handling delete request
-router.delete('/cereal/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   const subCategoryId = req.params.id;
   const divisionId = req.params.id
 
@@ -49,7 +49,7 @@ router.delete('/cereal/:id', async (req, res) => {
 });
 
 // Route for rendering the update form for a specific subcategory
-router.get('/cereal/:id', async (req, res) => {
+router.get('/update/:id', async (req, res) => {
   const subCategoryId = req.params.id;
 
   try {
