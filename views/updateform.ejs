@@ -7,8 +7,8 @@
   <body>
     <h1>Update Stock</h1>
     <div>
-      <form action="/cereal/<%= subCategory.id %>?_method=PUT" method="POST">
-        <!-- Add input fields with current subcategory data for updating -->
+      <form action="<%= `/${subCategory.categoryName}/${subCategory.id}?_method=PUT` %>" method="POST">
+    <!-- Add input fields with current subcategory data for updating -->
         <div>
           <label for="subcat">Sub-Category Name:</label>
           <input type="text" id="subcat" name="subcat" value="<%= subCategory.subCategoryName %>" required>

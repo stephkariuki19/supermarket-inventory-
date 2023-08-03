@@ -50,15 +50,13 @@ app.use('/', indexRouter);
 app.use('/create', createRouter);
 app.use('/users', usersRouter);
 
-app.use('/cereal', cerealRouter);
-app.use('/delete', cerealRouter);
-app.use('/update', cerealRouter);
+// Routes
 
+app.use('/cereal', cerealRouter);
 app.use('/dairy', dairyRouter);
 app.use('/fruits', fruitsRouter);
 app.use('/bakery', bakeryRouter);
 app.use('/produce', produceRouter);
-
 
 
 

@@ -9,6 +9,11 @@
     <p>Welcome to <%= title %></p>
 
     <ul>
+
+      <li>
+        <a href="/">Home page</a>
+      </li>
+
         <% items.forEach(function(item) { %>
           <!-- Wrap the li in anchor tags with dynamic URL -->
           <li>
@@ -17,6 +22,7 @@
             </a>
           </li>
         <% }); %>
+       
       </ul>
 
       <a href="/create">
@@ -39,8 +45,8 @@
             <div class="division">
               <div >
                 <h5><%= division.divisionName %></h5>
-                    <!-- Form for delete division request -->
-                <form action="/delete/<%= division.id %>?_method=DELETE" method="POST">
+                    <!-- Form for delete division request- -->
+                <form action="/cereal/delete/<%= division.id %>?_method=DELETE" method="POST">
                   <button type="submit">Delete</button>
                 </form>
                 <p>Available Domains:</p>
@@ -51,14 +57,14 @@
                   <div class="brand">
                     <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
                     <!-- Form for delete subcategory request -->
-                      <form action="/delete/<%= subCategory.id %>?_method=DELETE" method="POST">
+                      <form action="/cereal/delete/<%= subCategory.id %>?_method=DELETE" method="POST">
                         <button type="submit">Delete</button>
                       </form>
 
                         <!-- Link to the update form for the subcategory -->
-                      <a href="/<%= subCategory.id %>">
-                        <button>Update</button>
-                      </a>
+                        <form action="/<%= subCategory.id %>?_method=PUT" method="POST">
+                          <button type="submit">Update</button>
+                        </form>
                   </div>
                 <% }); %>
               <% } else { %>
