@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <h1>Update Stock</h1>
+    <form>
+        <!-- Pre-fill input fields with current subcategory data for updating -->
+        <div>
+            <label for="subcat">Sub-Category Name:</label>
+            <input type="text" id="subcat" name="subcat" value="<%= subcategory.subCategoryName %>" required>
+        </div>
+
+        <div>
+            <label for="subcatDesc">Sub-Category Description:</label>
+            <input type="text" id="subcatDesc" name="subcatDesc" value="<%= subcategory.subCategoryDescription %>" required>
+        </div>
+
+        <div>
+            <label for="quantity">Quantity :</label>
+            <input type="number" id="quantity" name="quantity" value="<%= subcategory.quantity %>" required>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

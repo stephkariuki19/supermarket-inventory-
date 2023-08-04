@@ -62,9 +62,10 @@
                       </form>
 
                         <!-- Link to the update form for the subcategory -->
-                        <form action="/cereal/update<%= subCategory.id %>?_method=PUT" method="POST">
-                          <button type="submit">Update</button>
-                        </form>
+                        
+                      <a href="/newupdate/<%= subCategory.id %>">
+                        <button type="button">Update</button>
+                    </a>
                   </div>
                 <% }); %>
               <% } else { %>

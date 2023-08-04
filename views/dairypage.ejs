@@ -43,7 +43,7 @@
               <div >
                 <h5><%= division.divisionName %></h5>
                     <!-- Form for delete division request- -->
-                <form action="/delete/<%= division.id %>?_method=DELETE" method="POST">
+                <form action="/dairy/delete/<%= division.id %>?_method=DELETE" method="POST">
                   <button type="submit">Delete</button>
                 </form>
                 <p>Available Domains:</p>
@@ -54,14 +54,11 @@
                   <div class="brand">
                     <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
                     <!-- Form for delete subcategory request -->
-                      <form action="/delete/<%= subCategory.id %>?_method=DELETE" method="POST">
+                      <form action="/dairy/delete/<%= subCategory.id %>?_method=DELETE" method="POST">
                         <button type="submit">Delete</button>
                       </form>
 
-                        <!-- Link to the update form for the subcategory -->
-                      <a href="/<%= subCategory.id %>">
-                        <button>Update</button>
-                      </a>
+                   
                   </div>
                 <% }); %>
               <% } else { %>

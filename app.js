@@ -13,9 +13,11 @@ const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const createRouter = require('./routes/create');
-const cerealRouter = require('./routes/cereal');
 
+const createRouter = require('./routes/create');
+const updateRouter =  require('./routes/newupdate');
+
+const cerealRouter = require('./routes/cereal');
 const dairyRouter = require('./routes/dairy');
 const bakeryRouter = require('./routes/bakery');
 const produceRouter = require('./routes/produce');
@@ -46,12 +48,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//main routes
 app.use('/', indexRouter);
-app.use('/create', createRouter);
 app.use('/users', usersRouter);
 
-// Routes
+//modification routes
+app.use('/create', createRouter);
+app.use('/newupdate', updateRouter);
 
+// Product Routes
 app.use('/cereal', cerealRouter);
 app.use('/dairy', dairyRouter);
 app.use('/fruits', fruitsRouter);
