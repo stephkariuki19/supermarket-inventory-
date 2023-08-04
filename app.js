@@ -26,7 +26,8 @@ const fruitsRouter = require('./routes/fruits');
 
 const app = express();
 
-app.use(methodOverride('_method'));
+//app.use(methodOverride('_method'));
+app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 
 //setting up database
 const dbURI =process.env.DB_CONNECT

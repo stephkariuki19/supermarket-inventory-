@@ -5,8 +5,17 @@
     <title>Update</title>
 </head>
 <body>
+
+    <ul>
+
+        <li>
+          <a href="/">Home page</a>
+        </li>
+  
+       
     <h1>Update Stock</h1>
-    <form>
+    <form action="/newupdate/<%= subcategory._id %>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
         <!-- Pre-fill input fields with current subcategory data for updating -->
         <div>
             <label for="subcat">Sub-Category Name:</label>
