@@ -14,7 +14,7 @@
   
        
     <h1>Update Stock</h1>
-    <form action="/newupdate/<%= subcategory._id %>" method="POST">
+    <form action="/newupdate/<%= subcategory._id %>?_method=PUT" method="POST">
         <input type="hidden" name="_method" value="PUT">
         <!-- Pre-fill input fields with current subcategory data for updating -->
         <div>

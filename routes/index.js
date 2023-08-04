@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
     const items = await Storeitems.find({}, 'categoryName categoryDescription quantity subCategoryName divisionName divisions');
 
     // Pass the data to the EJS template
-    res.render('index', { title: 'Express Supermart', items: items });
+    res.render('index', { title: 'Express Supermart 🛒', items: items });
   } catch (err) {
     next(err);
   }

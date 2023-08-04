@@ -1,9 +1,214 @@
-.category{
-    border: 1px solid green;
+*{
+    box-sizing:border-box;
+    margin: 0px;
+    font-family: 'Work Sans', sans-serif;
 }
-.division{
-    border:1px solid red;
+
+
+/*HOME PAGE*/
+.index-container{
+    border: 1px solid purple;
+    margin: 0 auto;
+
+    background-color: white;
+}
+.index-welcome{
+    border:2px solid red;
+    background-color: #136F63;
+    color: white;
+    text-align: center;
+    padding:10px;
+}
+.index-welcome h1{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.index-welcome p{
+    font-weight: 400;
+}
+.index-nav{
+    display: flex;
+    border: 1px solid pink;
+    padding: 10px;
+    align-items: center;
+}
+.index-nav button{
+    margin-left: 35px;
+    width:100px;
+    height:30px;
+    color: white;
+    background-color: #136F63;
+    border: none;
+    border-radius: 10px;
+}
+.index-nav h5{
+    font-size: 16px;
+}
+.index-nav a{
+    text-decoration: none;
+    color: #000F08;
+    font-size: 16px;
+}
+.index-nav a:hover{
+    border-bottom: 1px solid #000F08;
+}
+.category-heading{
+    font-size: 25px;
+    margin-left: 30px;
+    font-weight: 400;
+    margin: 10px;
+    text-decoration: underline;
+}
+.index-grid{
+    border:1px solid palegreen;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap:20px;
+    padding: 10px;
+}
+.index-category{
+    border: 2px solid #136F63;
+    border-radius: 10px;
+    padding: 15px;
+}
+.index-name{
+    font-size: 26px;
+    margin: 5px;
+}
+.index-kind{
+    font-weight: 600;
+}
+.index-desc{
+    margin-bottom: 5px;
+}
+.index-kind{
+    margin-bottom: 4px;
+}
+.index-brand{
+    text-decoration: underline;
+    font-size: 16px;
+}
+.index-division{
+    margin-bottom: 3px;
+}
+.subcat-item{
+    font-size: 14px;
+}
+
+.index-controls{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border: 1px solid red;
+    padding: 10px;
+}
+.index-controls button{
+    width:80px;
+    height:25px;
+    color: white;
+    background-color: #136F63;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    margin: 3px;
+  
+}
+.index-controls a{
+    text-decoration: none;
+    color: #136F63;
+}
+
+.view-link:hover{
+    border-bottom: 1px solid #136F63;
+}
+
+/*INDIVIDUAL PAGES*/
+.page-nav{
+    border: 1px solid red;
+    display: flex;
+    background-color: #136F63;
+    padding: 15px;
+    align-items: center;
+}
+.page-nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: 390;
+}
+.page-nav button{
+    margin-left: 35px;
+    width:100px;
+    height:30px;
+    color: #136F63;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.page-container{
+    border:1px solid green;
+}
+.page-title{
+    text-align: center;
+    color: #136F63;
+    padding: 10px;
+}
+
+.page-cat{
+   border: 2px solid yellow;
+   padding: 10px;
+}
+.page-div-title{
+    font-size: 20px;
+}
+.page-top{
+    display: flex;
+    border: 1px solid red;
+    font-size: 18px;
+    align-items: center;
+    margin: 4px;
+}
+.page-top h5{
+    color: #136F63;
+    margin-right: 10px;
+}
+.page-top button{
+    background-color: #136F63;
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+}
+.page-desc{
+    font-size: 25px;
+    font-weight: 350;
+    padding: 10px;
 }
 .brand{
-    border: 1px solid pink;
+    padding: 10px;
+    background-color: #D2D9E4;
+    border-radius: 10px;
+    margin: 4px;
+}
+.brand-btn button{
+    background-color: #136F63;
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+.avail-brands{
+    font-size: 16px;
+}
+footer{
+    margin-top: 10px;
+    background-color: #136F63;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: 60px;
+    padding: 20px;
 }

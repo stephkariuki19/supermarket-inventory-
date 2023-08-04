@@ -3,41 +3,54 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <ul>
-      <% items.forEach(function(item) { %>
-        <!-- Wrap the li in anchor tags with dynamic URL -->
-        <li>
-          <a href="/<%= encodeURIComponent(item.categoryName) %>">
-            <%= item.categoryName %>
-          </a>
-        </li>
-      <% }); %>
-    </ul>
+    <div class="index-container">
+      <div class="index-welcome">
+        <h1><%= title %></h1>
+        <p>Inventory System</p>
+  </div>
+   
+  <nav class="index-nav">
+    <h5> Products In Stock</h5>
+    <% items.forEach(function(item) { %>
+      <!-- Wrap the li in anchor tags with dynamic URL -->
+      <ul>
+        
+        <a href="/<%= encodeURIComponent(item.categoryName) %>">
+          <%= item.categoryName %>
+        </a>
+      </ul>
+        
+
+    <% }); %>
     <a href="/create">
       <button>Add item</button>
     </a>
+  </nav>
+    
 
-    <h2>Categories of Products:</h2>
+    <h2 class="category-heading">Categories of Products Available:</h2>
+    <div class="index-grid">
     <% items.forEach(function(item) { %>
-      <div class="category">
-        <h3><%= item.categoryName %></h3>
-        <p><%= item.categoryDescription %></p>
+      <div class="index-category">
+        <h3 class="index-name"><%= item.categoryName %></h3>
+        <p class="index-desc"><%= item.categoryDescription %></p>
 
-        <h4>Kinds:</h4>
+        <h4 class="index-kind">Kinds of <%= item.categoryName %> :</h4>
         <% if (item.divisions && item.divisions.length) { %>
           <% item.divisions.forEach(function(division) { %>
             <div>
-              <h5><%= division.divisionName %></h5>
+              <h5 class="index-division">-<%= division.divisionName %></h5>
               
-              <p>Available Brands:</p>
+              <p class="index-brand">Available Brands:</p>
               <% if (division.subCategories && division.subCategories.length) { %>
                 <% division.subCategories.forEach(function(subCategory) { %>
                   <div>
-                    <p><%= subCategory.subCategoryName %> </p>
+                    <p class="subcat-item"><%= subCategory.subCategoryName %> </p>
                   </div>
                 <% }); %>
               <% } else { %>
@@ -48,12 +61,21 @@
         <% } else { %>
           <p>No divisions available for this category.</p>
         <% } %>
-        <a href="/create">
-          <button>Add item</button>
-        </a>
 
-        <a href="/<%= encodeURIComponent(item.categoryName) %>">View this category</a>
+        <div class="index-controls">
+          <a href="/create">
+            <button>Add item</button>
+          </a>
+          <a class="view-link" href="/<%= encodeURIComponent(item.categoryName) %>">View this category</a>
+
+        </div>
+        
+
       </div>
     <% }); %>
+
+  </div>
+    <%- include('./partials/footer.ejs') %>
+    </div>
   </body>
 </html>

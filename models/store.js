@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const itemSchema = new mongoose.Schema({
   categoryName: { type: String, 
-    enum: ["cereal", "bakery", "produce","fruits","dairy"],
+    enum: [ "cereal", "bakery", "produce","fruits","dairy"],
     lowercase: true,
     required: true },
   categoryDescription: { type: String },

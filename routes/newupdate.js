@@ -28,7 +28,12 @@ router.put('/:id', async function (req, res, next) {
     console.log('PUT route accessed');
     try {
         const subCategoryId = req.params.id;
-        const { subCategoryDescription, quantity } = req.body;
+        const { subCategoryDescription,subCategoryName, quantity } = req.body;
+
+        // Validate that required fields are present in the request body
+        if (!subCategoryName || !subCategoryDescription || !quantity) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
 
         const category = await Storeitems.findOne({ 'divisions.subCategories._id': subCategoryId });
 
@@ -37,6 +42,7 @@ router.put('/:id', async function (req, res, next) {
             const subCategory = division.subCategories.find(sub => sub.id === subCategoryId);
 
             if (subCategory) {
+                subCategory.subCategoryName = subCategoryName
                 subCategory.subCategoryDescription = subCategoryDescription;
                 subCategory.quantity = quantity;
                 await category.save();
