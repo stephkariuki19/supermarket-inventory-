@@ -4,16 +4,12 @@
     font-family: 'Work Sans', sans-serif;
 }
 
-
 /*HOME PAGE*/
 .index-container{
-    border: 1px solid purple;
     margin: 0 auto;
-
     background-color: white;
 }
 .index-welcome{
-    border:2px solid red;
     background-color: #136F63;
     color: white;
     text-align: center;
@@ -28,7 +24,6 @@
 }
 .index-nav{
     display: flex;
-    border: 1px solid pink;
     padding: 10px;
     align-items: center;
 }
@@ -60,7 +55,6 @@
     text-decoration: underline;
 }
 .index-grid{
-    border:1px solid palegreen;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap:20px;
@@ -99,7 +93,6 @@
     display: flex;
     flex-direction: column;
     margin: 5px;
-    border: 1px solid red;
     padding: 10px;
 }
 .index-controls button{
@@ -124,7 +117,6 @@
 
 /*INDIVIDUAL PAGES*/
 .page-nav{
-    border: 1px solid red;
     display: flex;
     background-color: #136F63;
     padding: 15px;
@@ -146,7 +138,6 @@
 }
 
 .page-container{
-    border:1px solid green;
 }
 .page-title{
     text-align: center;
@@ -155,7 +146,6 @@
 }
 
 .page-cat{
-   border: 2px solid yellow;
    padding: 10px;
 }
 .page-div-title{
@@ -163,7 +153,6 @@
 }
 .page-top{
     display: flex;
-    border: 1px solid red;
     font-size: 18px;
     align-items: center;
     margin: 4px;
@@ -212,3 +201,5 @@ footer{
     height: 60px;
     padding: 20px;
 }
+/*ERROR PAGE*/
+

@@ -1,61 +1,82 @@
-<!-- dairypage.ejs -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title ><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="page-container">
+    <h1 class="page-title"><%= title %> Section</h1>
 
-    <ul>
-      <li>
+    <nav class="page-nav">
+
+      <ul>
         <a href="/">Home page</a>
-      </li>
-      <% items.forEach(function(item) { %>
-        <!-- Wrap the li in anchor tags with dynamic URL -->
-        <li>
-          <a href="/<%= encodeURIComponent(item.categoryName) %>">
-            <%= item.categoryName %>
-          </a>
-        </li>
-      <% }); %>
-    </ul>
+      </ul>
 
-    <a href="/create">
-      <button>Add item</button>
-    </a>
-
-    <h2>Categories:</h2>
+        <% items.forEach(function(item) { %>
+          <!-- Wrap the li in anchor tags with dynamic URL -->
+          <ul>
+            <a href="/<%= encodeURIComponent(item.categoryName) %>">
+              <%= item.categoryName %>
+            </a>
+          </ul>
+        <% }); %>
+       
+      <a href="/create">
+        <button>Add item</button>
+      </a>
+  
+    </nav>
+    
     <% items.forEach(function(item) { %>
-      <% if (item.categoryName === 'fruits') { %> <!-- Use '===' instead of '==' -->
-        <div>
-          <h3><%= item.categoryName %></h3>
-          <p><%= item.categoryDescription %></p>
+        <% if (item.categoryName ==='fruits') { %>
+         
+          <h3 class="page-desc">  <%= item.categoryDescription %></h3>
 
-          <h4>Divisions:</h4>
-          <% if (item.divisions && item.divisions.length) { %>
-            <% item.divisions.forEach(function(division) { %>
-              <div>
+      <div class="page-cat">
+
+        <h4 class="page-div-title">Divisions:</h4>
+        <% if (item.divisions && item.divisions.length) { %>
+          <% item.divisions.forEach(function(division) { %>
+            <div class="division">
+              <div class="page-top">
                 <h5><%= division.divisionName %></h5>
-                <p>Available Domains:</p>
-                <% if (division.subCategories && division.subCategories.length) { %>
-                  <% division.subCategories.forEach(function(subCategory) { %>
-                    <div>
-                      <p><%= subCategory.subCategoryName %> - <%= subCategory.subCategoryDescription %> (Quantity: <%= subCategory.quantity %>)</p>
-                    </div>
-                  <% }); %>
-                <% } else { %>
-                  <p>No sub-categories available for this division.</p>
-                <% } %>
+                    <!-- Form for delete division request- -->
+                <form action="/fruits/delete/<%= division.id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete</button>
+                </form>
               </div>
-            <% }); %>
-          <% } else { %>
-            <p>No divisions available for this category.</p>
-          <% } %>
-        </div>
+
+              <h5 class="avail-brands">Available Brands:</h5>
+
+              <% if (division.subCategories && division.subCategories.length) { %>
+                <% division.subCategories.forEach(function(subCategory) { %>
+                  <div class="brand">
+                    <p><%= subCategory.subCategoryName %> </p>
+                    <p><%= subCategory.subCategoryDescription %> </p>
+                    <p>-  Quantity: <%= subCategory.quantity %> 2kg packets</p>
+                    <!-- Form for delete subcategory request -->
+                      <form class="brand-btn" action="/fruits/delete/<%= subCategory.id %>?_method=DELETE" method="POST">
+                        <button  type="submit">Delete</button>
+                      </form>
+
+                        <!-- Link to the update form for the subcategory -->
+                        
+                    
+                  </div>
+                <% }); %>
+              <% } else { %>
+                <p>No sub-categories available for this division.</p>
+              <% } %>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <p>No divisions available for this category.</p>
+        <% } %>
+      </div>
       <% } %>
     <% }); %>
+  </div>
   </body>
 </html>

@@ -15,5 +15,33 @@ router.get('/', async function(req, res, next) {
     next(err);
   }
 });
+// Route for handling delete request
+router.delete('/delete/:id', async (req, res) => {
+  const subCategoryId = req.params.id;
+  const divisionId = req.params.id
+
+  try {
+    // Find the sub-category by its _id and remove it from the database
+    await Storeitems.updateOne(
+      { 'divisions.subCategories._id': subCategoryId },
+      { $pull: { 'divisions.$[].subCategories': { _id: subCategoryId } } }
+    );
+
+    await Storeitems.updateOne(
+      { 'divisions._id': divisionId },
+      { $pull: { 'divisions': { _id: divisionId } } }
+    );
+
+
+    console.log('delete made');
+
+   res.redirect('/fruits'); //maybe redirect elsewhere or  just have overlay
+  } catch (err) {
+    console.log(err);
+    // Handle errors and display an error page or message
+    res.redirect('/error');
+  }
+});
+
 
 module.exports = router;
